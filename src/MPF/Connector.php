@@ -88,21 +88,22 @@ class Connector extends \FlexiPeeHP\FlexiBeeRW
      */
     public static function returnExitCode($status, $message = '')
     {
+        $exitcode = 3;
         echo $status.' - '.$message;
         switch ($status) {
             case 'OK':
-                exit(0);
+                $exitcode = 0;
                 break;
             case 'WARNING':
-                exit(1);
+                $exitcode = 1;
                 break;
             case 'CRITICAL':
-                exit(2);
+                $exitcode = 2;
                 break;
             case 'UNKNOWN':
             default :
-                exit(3);
                 break;
         }
+        return $exitcode;
     }
 }

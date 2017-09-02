@@ -3,8 +3,8 @@ all: fresh build
 fresh:
 	git pull
 
-install: deb
-	gdebi -y ../monitoring-plugins-flexibee_*_all.deb
+install:
+	echo gdebi -y ../monitoring-plugins-flexibee_*_all.deb
 	
 build:
 	composer update
@@ -12,8 +12,9 @@ build:
 clean:
 	rm -rf debian/monitoring-plugins-flexibee
 	rm -rf debian/*.log
-	rm -rf vendor/*
+	rm -f composer.lock
 	rm -f ../monitoring-plugins-flexibee_*_all.deb
+	#rm -rf vendor/*
 
 doc:
 	echo doc
