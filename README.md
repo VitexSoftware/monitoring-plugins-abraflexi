@@ -2,6 +2,16 @@
 
 Nagios/Icinga plugins for monitoring Czech Economic system FlexiBee
 
+Usage
+-----
+
+    /usr/lib/nagios/plugins/check_flexibee  -s https://$HOSTADDRESS$ -u USERNAME -p PASSWORD -c company
+
+Example:
+
+    /usr/lib/nagios/plugins/check_flexibee_webhooks -s https://demo.flexibee.eu -u winstrom -p winstrom -c demo
+
+
 Configuration
 -------------
 
@@ -27,4 +37,8 @@ Pro Linux jsou k dispozici .deb balíčky. Prosím použijte repo:
     aptitude install monitoring-plugins-flexibee
 
 
+Dependencies
+------------
+
+https://github.com/Spoje-NET/FlexiPeeHP
 

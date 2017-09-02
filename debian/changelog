@@ -1,5 +1,6 @@
-monitoring-plugins-flexibee (0.1) UNRELEASED; urgency=medium
+monitoring-plugins-flexibee (0.1-1) UNRELEASED; urgency=medium
 
   * Initial release.
+  *     Makefile update
 
- -- Vítězslav Dvořák <info@vitexsoftware.cz>  Fri, 01 Sep 2017 18:18:43 +0200
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Sat, 02 Sep 2017 04:20:58 +0200

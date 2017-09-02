@@ -7,3 +7,4 @@
 /debian/revision
 /debian/lastversion
 /composer.lock
+/debian/monitoring-plugins-flexibee/
