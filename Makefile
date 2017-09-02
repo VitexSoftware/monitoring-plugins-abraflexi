@@ -20,7 +20,8 @@ doc:
 	echo doc
 
 test:
-	phpunit --bootstrap tests/Bootstrap.php tests
+	echo phpunit --bootstrap tests/Bootstrap.php tests
+	cd src ; ./check_flexibee.php  -s https://demo.flexibee.eu:443 -u winstrom -p winstrom -c demo && cd ..
 
 deb:
 	debuild -i -us -uc -b
