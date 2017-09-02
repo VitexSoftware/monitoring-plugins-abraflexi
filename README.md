@@ -2,6 +2,11 @@
 
 Nagios/Icinga plugins for monitoring Czech Economic system FlexiBee
 
+There is two plugins:
+
+  * check_flexibee - check if FlexiBee server is up and operational
+  * check_flexibee_webhooks - check for zero webhooks penaly
+
 Usage
 -----
 
@@ -10,6 +15,10 @@ Usage
 Example:
 
     /usr/lib/nagios/plugins/check_flexibee_webhooks -s https://demo.flexibee.eu -u winstrom -p winstrom -c demo
+
+
+![Debian Configure](https://raw.githubusercontent.com/VitexSoftware/monitoring-plugins-flexibee/master/monitoring-plugins-flexibee.png "run")
+
 
 
 Configuration
