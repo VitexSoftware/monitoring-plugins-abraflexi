@@ -1,0 +1,4 @@
+debian/conf/composer.json       usr/share/monitoring-plugins-flexibee/
+src/*.php		        usr/lib/nagios/plugins
+src/MPF/*.php		        usr/share/monitoring-plugins-flexibee/MPF/
+

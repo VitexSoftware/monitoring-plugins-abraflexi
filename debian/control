@@ -1,0 +1,16 @@
+Source: monitoring-plugins-flexibee
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.8.4
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Uploaders: Vitex <vitex@hippy.cz>
+Priority: optional
+Homepage: http://vitexsoftware.cz/
+
+Package: monitoring-plugins-flexibee
+Depends: ${misc:Depends},flexipeehp,php-cli,composer
+Architecture: all
+Section: web
+Priority: optional
+Description: Nagios/Icinga plugins for FlexiBee
+ Nagios/Icinga plugins for monitoring Czech Economic system FlexiBee
+

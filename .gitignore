@@ -1,0 +1,9 @@
+/debian/monitoring-plugins-flexibee.substvars
+/debian/monitoring-plugins-flexibee.debhelper.log
+/debian/debhelper-build-stamp
+/vendor/
+/.vagrant/
+/debian/version
+/debian/revision
+/debian/lastversion
+/composer.lock

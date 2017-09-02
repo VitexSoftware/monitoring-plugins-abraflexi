@@ -1,0 +1,21 @@
+#!/bin/sh
+# postinst script for monitoring-plugins-flexibee
+
+set -e
+
+    if [ "$1" = "configure" ]; then
+
+    . /usr/share/debconf/confmodule
+
+    fi
+
+
+cd /usr/share/monitoring-plugins-flexibee
+if [ -f composer.lock ] ; then
+    rm -f composer.lock
+fi
+composer --no-dev -o install
+
+#DEBHELPER#
+
+exit 0

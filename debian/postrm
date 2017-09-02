@@ -1,0 +1,17 @@
+#!/bin/sh
+# postrm script for monitoring-plugins-flexibee
+
+set -e
+
+if [ -f /usr/share/monitoring-plugins-flexibee/composer.lock ] ; then
+    rm -f /usr/share/monitoring-plugins-flexibee/composer.lock
+fi
+
+if [ -f /var/lib/monitoring-plugins-flexibee/autoload.php ] ; then
+    rm -rf /var/lib/monitoring-plugins-flexibee/
+fi
+
+
+#DEBHELPER#
+
+exit 0

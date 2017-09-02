@@ -1,0 +1,32 @@
+{
+    "name": "vitexsoftware-/monitoring-plugins-flexibee",
+    "description": "Nagios/Icinga plugins for monitoring Czech Economic system FlexiBee",
+    "type": "project",
+    "require": {
+        "spoje.net/flexipeehp": "*"
+    },
+    "license": "GPL-2",
+    "authors": [
+        {
+            "name": "Vítězslav Dvořák",
+            "email": "info@vitexsoftware.cz"
+        }
+    ],
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\Ease\\": "vendor/vitexsoftware/ease-framework/tests/src/Ease",
+            "Test\\FlexiPeeHP\\": "testing/src/FlexiPeeHP/",
+            "Test\\": "testing/"
+        }
+    },
+    "require-dev": {
+        "phpunit/php-token-stream": "~1.2",
+        "phpunit/phpunit": "5.3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "MPF\\": "src/MPF/"
+        }
+    },
+    "minimum-stability": "dev"
+}
