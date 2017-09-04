@@ -2,6 +2,9 @@
 
 Nagios/Icinga plugins for monitoring Czech Economic system FlexiBee
 
+![Screenshot](https://raw.githubusercontent.com/VitexSoftware/monitoring-plugins-flexibee/master/icinga-flexibee-check.png "run")
+
+
 There is two plugins:
 
   * check_flexibee - check if FlexiBee server is up and operational
