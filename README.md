@@ -1,4 +1,4 @@
-![Package Logo](https://raw.githubusercontent.com/VitexSoftware/php-flexibee-config/master/project_logo.png "Project Logo")
+![Package Logo](https://raw.githubusercontent.com/VitexSoftware/monitoring-plugins-flexibee/master/project_logo.png "Project Logo")
 # monitoring-plugins-flexibee
 
 Nagios/Icinga plugins for monitoring Czech Economic system FlexiBee
