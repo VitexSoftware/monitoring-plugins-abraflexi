@@ -1,7 +1,8 @@
-monitoring-plugins-flexibee (0.6) experimental; urgency=medium
+monitoring-plugins-flexibee (0.6.2) experimental; urgency=medium
 
   * Initial release.
-  *     Makefile update
+  * Makefile update
   * Use config file
+  * WebHooks check operational now
 
  -- Vítězslav Dvořák <vitex@develoid.jinonice.czf>  Thu, 07 Jun 2018 16:07:35 +0200

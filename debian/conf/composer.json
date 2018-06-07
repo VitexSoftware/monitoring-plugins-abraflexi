@@ -2,7 +2,7 @@
     "name": "vitexsoftware/monitoring-plugins-flexibee",
     "description": "Nagios/Icinga plugins for monitoring Czech Economic system FlexiBee",
     "type": "project",
-    "version": "0.1",
+    "version": "0.6.2",
     "authors": [
         {
             "name": "Vítězslav Dvořák",

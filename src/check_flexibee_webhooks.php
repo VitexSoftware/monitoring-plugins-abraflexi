@@ -4,7 +4,7 @@
  * monitoring plugins for FlexiBee - Check for WebHooks penalty
  *
  * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  2017 Vitex Software
+ * @copyright  2017-2018 Vitex Software
  */
 include_once '../vendor/autoload.php';
 $result  = 'UNKNOWN';
@@ -18,13 +18,21 @@ if (is_null($hooksdata)) {
     $message = $checker->lastResponseCode.' '.$checker->lastCurlError.' ('.$checker->url.')';
 } else {
     $result  = 'OK';
-    $message = 'FlexiBee '.count($hooksdata).' hooks ('.$checker->apiURL.')';
-    foreach ($hooksdata as $hookdata) {
-        if (intval($hookdata['penalty'])) {
-            $result  = 'WARNING';
-            $message .= ' '.$hookdata['url'].' '.$hooksdata['penalty'];
+    if (count($hooksdata)) {
+        $message = count($hooksdata).' hook' . ( count($hooksdata) > 1 ? 's' : '' ) . ' found; ' ;
+        foreach ($hooksdata as $hookdata) {
+            $message .= ' '.$hookdata['url'].' lastVersion: '.$hookdata['lastVersion'];
+            if (intval($hookdata['penalty'])) {
+                $result  = 'ERROR';
+                $message .= ' penalty: '.$hookdata['penalty'].' lastPenalty: '.$hookdata['lastPenalty'];
+            }
         }
+    } else {
+        $result  = 'WARNING';
+        $message .= ' No Hooks defined! ';
     }
+    
+    $message .= ' ('.$checker->getApiURL().'/hooks)';
 }
 
 exit(\MPF\Connector::returnExitCode($result, $message));
