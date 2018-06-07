@@ -39,7 +39,7 @@ define command{
 You can also use only -f or --file switch to specify use of config file. 
 Default config file location is /etc/flexibee/client.json ( also provided by [php-flexibee-config](https://github.com/VitexSoftware/php-flexibee-config) debian package )
 
-Example of [/etc/nagions/nrpe.d/nagios.cfg](debian/conf/flexibee.cfg) :
+Example of [/etc/nagions/nrpe.d/flexibee.cfg](debian/conf/flexibee.cfg) :
 
 ```
     command[check_flexibe]=/usr/lib/nagios/plugins/check_flexibee -f
