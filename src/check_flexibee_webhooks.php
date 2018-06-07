@@ -27,4 +27,4 @@ if (is_null($hooksdata)) {
     }
 }
 
-\MPF\Connector::returnExitCode($result, $message);
+exit(\MPF\Connector::returnExitCode($result, $message));

@@ -29,6 +29,7 @@ class Connector extends \FlexiPeeHP\FlexiBeeRW
         $shortopts     .= "u:";  // Username
         $shortopts     .= "p:";  // Password
         $shortopts     .= "c:";  // Company
+        $shortopts     .= "f:";  // Config
         $shortopts     .= "d";  // Debug
 
         $longopts = array(
@@ -36,6 +37,7 @@ class Connector extends \FlexiPeeHP\FlexiBeeRW
             "username:", // Username
             "password:", // Password
             "company:", // Company
+            "file", // Config file
             "debug", // Debug
         );
         $options  = getopt($shortopts, $longopts);
@@ -66,6 +68,18 @@ class Connector extends \FlexiPeeHP\FlexiBeeRW
             $optionsParsed['password'] = $options['password'];
         }
 
+        if (array_key_exists('f', $options)) {
+            $optionsParsed['config'] = $options['f'] ? $options['f'] : '/etc/flexibee/client.json';
+        }
+
+        if (array_key_exists('file', $options)) {
+            $optionsParsed['config'] = $options['file'] ? $options['file'] : '/etc/flexibee/client.json';
+        }
+
+        if (array_key_exists('config', $optionsParsed)) {
+            \Ease\Shared::instanced()->loadConfig($optionsParsed['config']);
+        }
+
         if (array_key_exists('d', $options)) {
             $optionsParsed['debug'] = true;
         }
@@ -73,7 +87,8 @@ class Connector extends \FlexiPeeHP\FlexiBeeRW
             $optionsParsed['debug'] = true;
         }
 
-        if (count($optionsParsed) < 4) {
+        if ((count($optionsParsed) < 4) && !array_key_exists('config',
+                $optionsParsed)) {
             echo("Usage: ".basename($_SERVER['SCRIPT_NAME'])." -s  https://SERVER[:PORT] -u USERNAME -p PASSWORD -c COMPANY [-d debug]\n");
         }
 

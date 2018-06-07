@@ -4,7 +4,7 @@
  * monitoring plugins for FlexiBee - Basic Check
  *
  * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  2017 Vitex Software
+ * @copyright  2017-2018 Vitex Software
  */
 include_once '../vendor/autoload.php';
 $result  = 'UNKNOWN';
@@ -21,4 +21,4 @@ if (is_null($infodata)) {
     $message = 'FlexiBee '.$infodata['version'].' ('.$checker->url.')';
 }
 
-\MPF\Connector::returnExitCode($result, $message);
+exit(\MPF\Connector::returnExitCode($result, $message));

@@ -14,7 +14,7 @@ clean:
 	rm -rf debian/*.log
 	rm -f composer.lock
 	rm -f ../monitoring-plugins-flexibee_*_all.deb
-	#rm -rf vendor/*
+	rm -rf vendor/*
 
 doc:
 	echo doc

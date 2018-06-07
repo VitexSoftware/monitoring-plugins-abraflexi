@@ -4,13 +4,13 @@ Standards-Version: 3.8.4
 Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
 Uploaders: Vitex <vitex@hippy.cz>
 Priority: optional
-Homepage: http://vitexsoftware.cz/
+Homepage: https://github.com/VitexSoftware/monitoring-plugins-flexibee
 
 Package: monitoring-plugins-flexibee
-Depends: ${misc:Depends},flexipeehp,php-cli,composer
+Depends: ${misc:Depends},flexipeehp,php-cli|php5-cli|php5.6-cli|php7.0-cli|php7.1-cli|php7.2-cli,composer
+Suggests: php-flexibee-config, nagios-nrpe-server
 Architecture: all
 Section: web
 Priority: optional
 Description: Nagios/Icinga plugins for FlexiBee
  Nagios/Icinga plugins for monitoring Czech Economic system FlexiBee
-
