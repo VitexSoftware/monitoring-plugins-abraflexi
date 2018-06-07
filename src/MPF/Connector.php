@@ -37,7 +37,7 @@ class Connector extends \FlexiPeeHP\FlexiBeeRW
             "username:", // Username
             "password:", // Password
             "company:", // Company
-            "file", // Config file
+            "file:", // Config file
             "debug", // Debug
         );
         $options  = getopt($shortopts, $longopts);

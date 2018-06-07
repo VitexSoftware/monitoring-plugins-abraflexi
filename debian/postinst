@@ -14,7 +14,7 @@ cd /usr/share/monitoring-plugins-flexibee
 if [ -f composer.lock ] ; then
     rm -f composer.lock
 fi
-composer --no-dev -o install
+composer --no-plugins --no-scripts --no-dev -o install
 
 #DEBHELPER#
 
