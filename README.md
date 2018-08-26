@@ -3,15 +3,14 @@
 
 Nagios/Icinga plugins for monitoring Czech Economic system FlexiBee
 
-![Screenshot](https://raw.githubusercontent.com/VitexSoftware/monitoring-plugins-flexibee/master/icinga-flexibee-check.png "UP")
+![License Expiry](https://raw.githubusercontent.com/VitexSoftware/monitoring-plugins-flexibee/master/license-expiry-check.png "License")
+
 
 
 There is two plugins:
 
   * check_flexibee - check if FlexiBee server is up and operational with valid License
   * check_flexibee_webhooks - check for zero webhooks penalty
-
-![License Expiry](https://raw.githubusercontent.com/VitexSoftware/monitoring-plugins-flexibee/master/license-expiry-check.png "License")
 
 
 Usage

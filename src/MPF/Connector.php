@@ -77,7 +77,7 @@ class Connector extends \FlexiPeeHP\FlexiBeeRW
         }
 
         if (array_key_exists('config', $optionsParsed)) {
-            \Ease\Shared::instanced()->loadConfig($optionsParsed['config']);
+            \Ease\Shared::instanced()->loadConfig($optionsParsed['config'],true);
         }
 
         if (array_key_exists('d', $options)) {
