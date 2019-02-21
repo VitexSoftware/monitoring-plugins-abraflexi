@@ -1,5 +1,5 @@
 {
-    "name": "vitexsoftware-/monitoring-plugins-flexibee",
+    "name": "vitexsoftware/monitoring-plugins-flexibee",
     "description": "Nagios/Icinga plugins for monitoring Czech Economic system FlexiBee",
     "type": "project",
     "require": {
@@ -20,8 +20,7 @@
         }
     },
     "require-dev": {
-        "phpunit/php-token-stream": "~1.2",
-        "phpunit/phpunit": "5.3.*"
+        "phpunit/phpunit": "*"
     },
     "autoload": {
         "psr-4": {

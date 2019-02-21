@@ -6,5 +6,6 @@
 override_dh_install:
 	dh_install
 	sed -i -e 's/..\/vendor/\/var\/lib\/monitoring-plugins-flexibee/g' debian/monitoring-plugins-flexibee/usr/lib/nagios/plugins/*.php
+	sed -i 's/^/#!\/usr\/bin\/env php /' debian/monitoring-plugins-flexibee/usr/lib/nagios/plugins/check_*.php
 	mv debian/monitoring-plugins-flexibee/usr/lib/nagios/plugins/check_flexibee.php debian/monitoring-plugins-flexibee/usr/lib/nagios/plugins/check_flexibee
 	mv debian/monitoring-plugins-flexibee/usr/lib/nagios/plugins/check_flexibee_webhooks.php debian/monitoring-plugins-flexibee/usr/lib/nagios/plugins/check_flexibee_webhooks

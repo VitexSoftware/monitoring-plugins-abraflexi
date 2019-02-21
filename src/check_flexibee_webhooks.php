@@ -1,4 +1,3 @@
-#!/usr/bin/env php
 <?php
 /**
  * monitoring plugins for FlexiBee - Check for WebHooks penalty
@@ -7,6 +6,10 @@
  * @copyright  2017-2018 Vitex Software
  */
 include_once '../vendor/autoload.php';
+
+define('EASE_APPNAME', 'check_flexibee_webhooks');
+define('EASE_LOGGER', 'syslog');
+
 $result  = 'UNKNOWN';
 $message = 'wtf?';
 
