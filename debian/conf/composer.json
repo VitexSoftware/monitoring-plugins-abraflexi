@@ -15,8 +15,8 @@
     },
     "require": {
         "php": ">= 5.5.9",
-        "flexipeehp": "*",
-        "ease-framework": "*"
+        "deb/flexipeehp": "*",
+        "deb/ease-framework": "*"
     },
     "autoload": {
         "psr-4": {
