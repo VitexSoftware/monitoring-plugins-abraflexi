@@ -1,16 +1,16 @@
-Source: monitoring-plugins-flexibee
-Build-Depends: debhelper (>= 7.0.50~)
-Standards-Version: 3.8.4
+Source: monitoring-plugins-abraflexi
+Build-Depends: debhelper (>= 7.0.50~),
+Standards-Version: 4.3.0
 Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
 Uploaders: Vitex <vitex@hippy.cz>
 Priority: optional
-Homepage: https://github.com/VitexSoftware/monitoring-plugins-flexibee
+Homepage: https://github.com/VitexSoftware/monitoring-plugins-abraflexi
 
-Package: monitoring-plugins-flexibee
-Depends: ${misc:Depends},flexipeehp,php-cli|php5-cli|php5.6-cli|php7.0-cli|php7.1-cli|php7.2-cli|php7.3-cli,composer
-Suggests: php-flexibee-config, nagios-nrpe-server
+Package: monitoring-plugins-abraflexi
+Depends: ${misc:Depends},php-spojenet-abraflexi,php-cli,composer
+Suggests: php-abraflexi-config, nagios-nrpe-server
 Architecture: all
 Section: web
 Priority: optional
-Description: Nagios/Icinga plugins for FlexiBee
- Nagios/Icinga plugins for monitoring Czech Economic system FlexiBee
+Description: Nagios/Icinga plugins for AbraFlexi
+ Nagios/Icinga plugins for monitoring Czech Economic system AbraFlexi

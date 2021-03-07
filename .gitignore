@@ -1,5 +1,5 @@
-/debian/monitoring-plugins-flexibee.substvars
-/debian/monitoring-plugins-flexibee.debhelper.log
+/debian/monitoring-plugins-abraflexi.substvars
+/debian/monitoring-plugins-abraflexi.debhelper.log
 /debian/debhelper-build-stamp
 /vendor/
 /.vagrant/
@@ -7,4 +7,7 @@
 /debian/revision
 /debian/lastversion
 /composer.lock
-/debian/monitoring-plugins-flexibee/
+/debian/monitoring-plugins-abraflexi/
+./env
+/nbproject/private/
+/debian/.debhelper/

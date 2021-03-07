@@ -1,0 +1,7 @@
+#!/usr/bin/env php 
+<?php
+require "/usr/share/monitoring-plugins-abraflexi/check_abraflexi.php";
+
+
+
+

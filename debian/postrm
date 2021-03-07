@@ -1,14 +1,14 @@
 #!/bin/sh
-# postrm script for monitoring-plugins-flexibee
+# postrm script for monitoring-plugins-abraflexi
 
 set -e
 
-if [ -f /usr/share/monitoring-plugins-flexibee/composer.lock ] ; then
-    rm -f /usr/share/monitoring-plugins-flexibee/composer.lock
+if [ -f /usr/share/monitoring-plugins-abraflexi/composer.lock ] ; then
+    rm -f /usr/share/monitoring-plugins-abraflexi/composer.lock
 fi
 
-if [ -f /var/lib/monitoring-plugins-flexibee/autoload.php ] ; then
-    rm -rf /var/lib/monitoring-plugins-flexibee/
+if [ -f /var/lib/monitoring-plugins-abraflexi/autoload.php ] ; then
+    rm -rf /var/lib/monitoring-plugins-abraflexi/
 fi
 
 

@@ -1,9 +1,9 @@
 Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=143
-Upstream-Name: Monitoring Plugins FlexiBee
-Upstream-Source: https://github.com/VitexSoftware/monitoring-plugins-flexibee
+Upstream-Name: Monitoring Plugins AbraFlexi
+Upstream-Source: https://github.com/VitexSoftware/monitoring-plugins-abraflexi
 
 Files: *
-Homepage: https://github.com/VitexSoftware/monitoring-plugins-flexibee
+Homepage: https://github.com/VitexSoftware/monitoring-plugins-abraflexi
 Copyright:
   (c) 2017 Vítězslav Dvořák (v.s.cz)
 License: GPL-2 

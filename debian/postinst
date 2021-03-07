@@ -1,5 +1,5 @@
 #!/bin/sh
-# postinst script for monitoring-plugins-flexibee
+# postinst script for monitoring-plugins-abraflexi
 
 set -e
 
@@ -10,7 +10,7 @@ set -e
     fi
 
 
-cd /usr/share/monitoring-plugins-flexibee
+cd /usr/share/monitoring-plugins-abraflexi
 if [ -f composer.lock ] ; then
     rm -f composer.lock
 fi

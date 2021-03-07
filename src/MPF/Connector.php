@@ -1,6 +1,7 @@
 <?php
+
 /**
- * monitoring plugins for FlexiBee - Shared clas
+ * monitoring plugins for AbraFlexi - Shared clas
  *
  * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
  * @copyright  2017 Vitex Software
@@ -13,24 +14,23 @@ namespace MPF;
  *
  * @author vitex
  */
-class Connector extends \FlexiPeeHP\FlexiBeeRW
-{
+class Connector extends \AbraFlexi\RW {
 
     /**
      * Parse Commandline
      *
      * @return array
      */
-    public static function parseCmdline()
-    {
+    public static function parseCmdline() {
         $optionsParsed = [];
-        $shortopts     = "";
-        $shortopts     .= "s:";  // Server
-        $shortopts     .= "u:";  // Username
-        $shortopts     .= "p:";  // Password
-        $shortopts     .= "c:";  // Company
-        $shortopts     .= "f:";  // Config
-        $shortopts     .= "d";  // Debug
+        $shortopts = "";
+        $shortopts .= "s:";  // Server
+        $shortopts .= "u:";  // Username
+        $shortopts .= "p:";  // Password
+        $shortopts .= "c:";  // Company
+        $shortopts .= "f:";  // Config
+        $shortopts .= "d";   // Debug
+        $shortopts .= "h";   // Help
 
         $longopts = array(
             "server:", // Server
@@ -39,8 +39,9 @@ class Connector extends \FlexiPeeHP\FlexiBeeRW
             "company:", // Company
             "file:", // Config file
             "debug", // Debug
+            "help"
         );
-        $options  = getopt($shortopts, $longopts);
+        $options = getopt($shortopts, $longopts);
 
         if (array_key_exists('s', $options)) {
             $optionsParsed['url'] = $options['s'];
@@ -69,15 +70,15 @@ class Connector extends \FlexiPeeHP\FlexiBeeRW
         }
 
         if (array_key_exists('f', $options)) {
-            $optionsParsed['config'] = $options['f'] ? $options['f'] : '/etc/flexibee/client.json';
+            $optionsParsed['config'] = $options['f'] ? $options['f'] : '/etc/abraflexi/client.json';
         }
 
         if (array_key_exists('file', $options)) {
-            $optionsParsed['config'] = $options['file'] ? $options['file'] : '/etc/flexibee/client.json';
+            $optionsParsed['config'] = $options['file'] ? $options['file'] : '/etc/abraflexi/client.json';
         }
 
         if (array_key_exists('config', $optionsParsed)) {
-            \Ease\Shared::instanced()->loadConfig($optionsParsed['config'],true);
+            \Ease\Shared::instanced()->loadConfig($optionsParsed['config'], true);
         }
 
         if (array_key_exists('d', $options)) {
@@ -87,9 +88,9 @@ class Connector extends \FlexiPeeHP\FlexiBeeRW
             $optionsParsed['debug'] = true;
         }
 
-        if ((count($optionsParsed) < 4) && !array_key_exists('config',
-                $optionsParsed)) {
-            echo("Usage: ".basename($_SERVER['SCRIPT_NAME'])." -s  https://SERVER[:PORT] -u USERNAME -p PASSWORD -c COMPANY [-d debug]\n");
+        if (array_key_exists('help', $options) || array_key_exists('h', $options) ) {
+            echo("Usage: " . basename($_SERVER['SCRIPT_NAME']) . " -s  https://SERVER[:PORT] -u USERNAME -p PASSWORD -c COMPANY [-d debug]\n");
+            exit;
         }
 
         return $optionsParsed;
@@ -101,10 +102,9 @@ class Connector extends \FlexiPeeHP\FlexiBeeRW
      * @param string $status  OK|WARNING|CRITICAL|UNKNOWN
      * @param string $message Additional message
      */
-    public static function returnExitCode($status, $message = '')
-    {
+    public static function returnExitCode($status, $message = '') {
         $exitcode = 3;
-        echo $status.' - '.$message;
+        echo $status . ' - ' . $message;
         switch ($status) {
             case 'OK':
                 $exitcode = 0;
@@ -121,4 +121,5 @@ class Connector extends \FlexiPeeHP\FlexiBeeRW
         }
         return $exitcode;
     }
+
 }

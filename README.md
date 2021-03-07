@@ -1,66 +1,76 @@
-![Package Logo](https://raw.githubusercontent.com/VitexSoftware/monitoring-plugins-flexibee/master/project_logo.png "Project Logo")
-# monitoring-plugins-flexibee
+![Package Logo](https://raw.githubusercontent.com/VitexSoftware/monitoring-plugins-abraflexi/master/project_logo.png "Project Logo")
+# monitoring-plugins-abraflexi
 
-Nagios/Icinga plugins for monitoring Czech Economic system FlexiBee
+Nagios/Icinga plugins for monitoring Czech Economic system AbraFlexi
 
-![License Expiry](https://raw.githubusercontent.com/VitexSoftware/monitoring-plugins-flexibee/master/license-expiry-check.png "License")
+![License Expiry](https://raw.githubusercontent.com/VitexSoftware/monitoring-plugins-abraflexi/master/license-expiry-check.png "License")
 
 
 
 There is two plugins:
 
-  * check_flexibee - check if FlexiBee server is up and operational with valid License
-  * check_flexibee_webhooks - check for zero webhooks penalty
+  * check_abraflexi - check if AbraFlexi server is up and operational with valid License
+  * check_abraflexi_webhooks - check for zero webhooks penalty
 
 
 Usage
 -----
 
-    /usr/lib/nagios/plugins/check_flexibee  -s https://$HOSTADDRESS$ -u USERNAME -p PASSWORD -c company
+    /usr/lib/nagios/plugins/check_abraflexi  -s https://$HOSTADDRESS$ -u USERNAME -p PASSWORD -c company
 
 Example:
 
-    /usr/lib/nagios/plugins/check_flexibee_webhooks -s https://demo.flexibee.eu -u winstrom -p winstrom -c demo
+    /usr/lib/nagios/plugins/check_abraflexi_webhooks -s https://demo.abraflexi.eu -u winstrom -p winstrom -c demo
 
-![Debian Configure](https://raw.githubusercontent.com/VitexSoftware/monitoring-plugins-flexibee/master/monitoring-plugins-flexibee.png "run")
+![Debian Configure](https://raw.githubusercontent.com/VitexSoftware/monitoring-plugins-abraflexi/master/monitoring-plugins-abraflexi.png "run")
 
 Configuration
 -------------
 
+
 ```
 define command{
-        command_name    check_flexibee
-        command_line    $USER1$/check_flexibee -s https://$HOSTADDRESS$ -u USERNAME -p PASSWORD -c company
+        command_name    check_abraflexi
+        command_line    $USER1$/check_abraflexi -s https://$HOSTADDRESS$ -u USERNAME -p PASSWORD -c company
         }
 define command{
-        command_name    check_flexibee_webhooks
-        command_line    $USER1$/check_flexibee_webhooks -s https://$HOSTADDRESS$ -u USERNAME -p PASSWORD -c company
+        command_name    check_abraflexi_webhooks
+        command_line    $USER1$/check_abraflexi_webhooks -s https://$HOSTADDRESS$ -u USERNAME -p PASSWORD -c company
         }
 ```
 
 You can also use only -f or --file switch to specify use of config file. 
-Default config file location is /etc/flexibee/client.json ( also provided by [php-flexibee-config](https://github.com/VitexSoftware/php-flexibee-config) debian package )
+Default config file location is /etc/abraflexi/client.json ( also provided by [php-abraflexi-config](https://github.com/VitexSoftware/php-abraflexi-config) debian package )
 
-Example of [/etc/nagions/nrpe.d/flexibee.cfg](debian/conf/flexibee.cfg) :
+Example of [/etc/nagions/nrpe.d/abraflexi.cfg](debian/conf/abraflexi.cfg) :
 
 ```
-    command[check_flexibe]=/usr/lib/nagios/plugins/check_flexibee -f
-    command[check_flexibee_webhooks]=/usr/lib/nagios/plugins/check_flexibee_webhooks -f
+    command[check_flexibe]=/usr/lib/nagios/plugins/check_abraflexi -f
+    command[check_abraflexi_webhooks]=/usr/lib/nagios/plugins/check_abraflexi_webhooks -f
 ```
+
+Without -f swith the undergoing library php-abraflexi try to use Environment variables: 
+
+**ABRAFLEXI_URL**, **ABRAFLEXI_LOGIN**, **ABRAFLEXI_PASSWORD**, **ABRAFLEXI_COMPANY**
+
 
 Debian/Ubuntu
 -------------
 
 Pro Linux jsou k dispozici .deb balíčky. Prosím použijte repo:
 
-    wget -O - http://v.s.cz/info@vitexsoftware.cz.gpg.key|sudo apt-key add -
-    echo deb http://v.s.cz/ stable main > /etc/apt/sources.list.d/ease.list
-    apt update
-    apt install monitoring-plugins-flexibee
 
+```shell
+sudo apt install lsb-release wget
+echo "deb http://repo.vitexsoftware.cz $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/vitexsoftware.list
+sudo wget -O /etc/apt/trusted.gpg.d/vitexsoftware.gpg http://repo.vitexsoftware.cz/keyring.gpg
+sudo apt update
+sudo apt install monitoring-plugins-abraflexi
+```
 
 Dependencies
 ------------
 
-https://github.com/Spoje-NET/FlexiPeeHP
+ * https://github.com/VitexSoftware/php-ease-core
+ * https://github.com/Spoje-NET/php-abraflexi
 

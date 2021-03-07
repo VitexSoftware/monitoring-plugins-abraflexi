@@ -5,11 +5,11 @@ echo deb http://v.s.cz/ stable main > /etc/apt/sources.list.d/vitexsoftware.list
 export DEBIAN_FRONTEND="noninteractive"
 apt-get update
 apt-get install -y make build-essential fakeroot devscripts gdebi-core
-apt-get install -y monitoring-plugins-flexibee
+apt-get install -y monitoring-plugins-abraflexi
 cd /vagrant
 make deb
-gdebi -y ../monitoring-plugins-flexibee_*_all.deb
+gdebi -y ../monitoring-plugins-abraflexi_*_all.deb
 
-/usr/lib/nagios/plugins/check_flexibee -s https://demo.flexibee.eu -u winstrom -p winstrom -c demo
-/usr/lib/nagios/plugins/check_flexibee_webhooks -s https://demo.flexibee.eu -u winstrom -p winstrom -c demo
+/usr/lib/nagios/plugins/check_abraflexi -s https://demo.abraflexi.eu -u winstrom -p winstrom -c demo
+/usr/lib/nagios/plugins/check_abraflexi_webhooks -s https://demo.abraflexi.eu -u winstrom -p winstrom -c demo
 tail -f /var/log/messages 

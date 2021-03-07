@@ -1,6 +1,6 @@
 {
-    "name": "vitexsoftware/monitoring-plugins-flexibee",
-    "description": "Nagios/Icinga plugins for monitoring Czech Economic system FlexiBee",
+    "name": "vitexsoftware/monitoring-plugins-abraflexi",
+    "description": "Nagios/Icinga plugins for monitoring Czech Economic system Abra Flexi",
     "type": "project",
     "version": "0.6.2",
     "authors": [
@@ -11,12 +11,10 @@
     ],
     "minimum-stability": "dev",
     "config": {
-	"vendor-dir": "/var/lib/monitoring-plugins-flexibee"
+        "vendor-dir": "/var/lib/monitoring-plugins-abraflexi"
     },
     "require": {
-        "php": ">= 5.5.9",
-        "deb/flexipeehp": "*",
-        "deb/ease-framework": "*"
+        "deb/abraflexi": "*"
     },
     "autoload": {
         "psr-4": {
@@ -26,18 +24,17 @@
     "repositories": [
         {
             "type": "path",
-            "url": "/usr/share/php/Ease",
+            "url": "/usr/share/php/EaseCore",
             "options": {
                 "symlink": true
             }
         },
         {
             "type": "path",
-            "url": "/usr/share/php/FlexiPeeHP",
+            "url": "/usr/share/php/AbraFlexi",
             "options": {
                 "symlink": true
             }
         }
     ]
-
 }
