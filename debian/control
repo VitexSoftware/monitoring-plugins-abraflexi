@@ -12,5 +12,5 @@ Suggests: php-abraflexi-config, nagios-nrpe-server
 Architecture: all
 Section: web
 Priority: optional
-Description: Nagios/Icinga plugins for AbraFlexi
- Nagios/Icinga plugins for monitoring Czech Economic system AbraFlexi
+Description: Nagios/Icinga plugins for Abra Flexi
+ Nagios/Icinga plugins for monitoring Czech Economic system Abra Flexi

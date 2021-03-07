@@ -3,7 +3,7 @@
 
 Nagios/Icinga plugins for monitoring Czech Economic system AbraFlexi
 
-![License Expiry](https://raw.githubusercontent.com/VitexSoftware/monitoring-plugins-abraflexi/master/license-expiry-check.png "License")
+![License Expiry](license-expiry-check.png?raw=true "License")
 
 
 
@@ -20,9 +20,9 @@ Usage
 
 Example:
 
-    /usr/lib/nagios/plugins/check_abraflexi_webhooks -s https://demo.abraflexi.eu -u winstrom -p winstrom -c demo
+    /usr/lib/nagios/plugins/check_abraflexi_webhooks -s https://demo.flexibee.eu -u winstrom -p winstrom -c demo
 
-![Debian Configure](https://raw.githubusercontent.com/VitexSoftware/monitoring-plugins-abraflexi/master/monitoring-plugins-abraflexi.png "run")
+![Debian Configure](monitoring-plugins-abraflexi.png?raw=true "run")
 
 Configuration
 -------------
