@@ -3,8 +3,6 @@
 
 Nagios/Icinga plugins for monitoring Czech Economic system AbraFlexi
 
-![License Expiry](license-expiry-check.png?raw=true "License")
-
 
 
 There is two plugins:
@@ -53,6 +51,7 @@ Without -f swith the undergoing library php-abraflexi try to use Environment var
 
 **ABRAFLEXI_URL**, **ABRAFLEXI_LOGIN**, **ABRAFLEXI_PASSWORD**, **ABRAFLEXI_COMPANY**
 
+![License Expiry](license-expiry-check.png?raw=true "License")
 
 Debian/Ubuntu
 -------------
