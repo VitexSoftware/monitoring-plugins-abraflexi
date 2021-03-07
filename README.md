@@ -1,4 +1,4 @@
-![Package Logo](https://raw.githubusercontent.com/VitexSoftware/monitoring-plugins-abraflexi/master/project_logo.png "Project Logo")
+![Package Logo](social-preview.svg?raw=true "Project Logo")
 # monitoring-plugins-abraflexi
 
 Nagios/Icinga plugins for monitoring Czech Economic system AbraFlexi
