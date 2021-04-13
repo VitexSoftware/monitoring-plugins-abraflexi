@@ -2,10 +2,7 @@
     "name": "vitexsoftware/monitoring-plugins-abraflexi",
     "description": "Nagios/Icinga plugins for monitoring Czech Economic system AbraFlexi",
     "type": "project",
-    "require": {
-        "spojenet/abraflexi": "2.0.x-dev"
-    },
-    "license": "GPL-2",
+    "license": "MIT",
     "authors": [
         {
             "name": "Vítězslav Dvořák",
@@ -15,20 +12,20 @@
     "require": {
         "spojenet/flexibee": "2.0.x-dev"
     },
+    "autoload": {
+        "psr-4": {
+            "MPF\\": "src/MPF/"
+        }
+    },
     "autoload-dev": {
         "psr-4": {
-            "Test\\Ease\\": "vendor/vitexsoftware/ease-core/tests/src/Ease",
+            "Test\\Ease\\": "vendor/vitexsoftware/ease-core/tests/src/EaseCore/",
             "Test\\AbraFlexi\\": "vendor/spoje.net/abraflexi/testing/src/AbraFlexi/",
             "Test\\MPF\\": "tests/src/MPF"
         }
     },
     "require-dev": {
         "phpunit/phpunit": "^9"
-    },
-    "autoload": {
-        "psr-4": {
-            "MPF\\": "src/MPF/"
-        }
     },
     "minimum-stability": "dev"
 }

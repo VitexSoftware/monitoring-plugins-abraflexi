@@ -25,17 +25,18 @@ if (is_null($hooksdata)) {
     if (count($hooksdata)) {
         $message = count($hooksdata) . ' hook' . ( count($hooksdata) > 1 ? 's' : '' ) . ' found; ';
         foreach ($hooksdata as $hookdata) {
-            $message .= ' ' . $hookdata['url'] . ' lastVersion: ' . $hookdata['lastVersion'];
-            if (intval($hookdata['penalty'])) {
-                $result = 'ERROR';
-                $message .= ' penalty: ' . $hookdata['penalty'] . ' lastPenalty: ' . $hookdata['lastPenalty'];
+            if (empty($checker->webhook) || ($checker->webhook == $hookdata['url'])) {
+                $message .= ' ' . $hookdata['url'] . ' lastVersion: ' . $hookdata['lastVersion'];
+                if (intval($hookdata['penalty'])) {
+                    $result = 'ERROR';
+                    $message .= ' penalty: ' . $hookdata['penalty'] . ' lastPenalty: ' . $hookdata['lastPenalty'];
+                }
             }
         }
     } else {
         $result = 'WARNING';
         $message .= ' No Hooks defined! ';
     }
-
     $message .= ' (' . $checker->getApiURL() . '/hooks)';
 }
 

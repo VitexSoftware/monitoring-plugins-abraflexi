@@ -16,6 +16,29 @@ namespace MPF;
  */
 class Connector extends \AbraFlexi\RW {
 
+
+    /**
+     * Check only this webhook
+     * @var string
+     */
+    public $webhook = null;
+
+
+    /**
+     * SetUp Object to be ready for work
+     *
+     * @param array $options Object Options ( user,password,authSessionId
+     *                                        company,url,evidence,
+     *                                        prefix,defaultUrlParams,debug,
+     *                                        detail,offline,filter,ignore404,nativeTypes
+     *                                        timeout,companyUrl,ver,throwException
+     *                                        webhook
+     */
+    public function setUp(array $options = []) {
+        parent::setUp($options);
+        $this->setupProperty($options, 'webhook', 'ABRAFLEXI_WEBHOOK');
+    }
+
     /**
      * Parse Commandline
      *
@@ -31,6 +54,7 @@ class Connector extends \AbraFlexi\RW {
         $shortopts .= "f:";  // Config
         $shortopts .= "d";   // Debug
         $shortopts .= "h";   // Help
+        $shortopts .= "w";   // WebHook
 
         $longopts = array(
             "server:", // Server
@@ -39,6 +63,7 @@ class Connector extends \AbraFlexi\RW {
             "company:", // Company
             "file:", // Config file
             "debug", // Debug
+            "webhook", // WebHook
             "help"
         );
         $options = getopt($shortopts, $longopts);
@@ -69,6 +94,13 @@ class Connector extends \AbraFlexi\RW {
             $optionsParsed['password'] = $options['password'];
         }
 
+        if (array_key_exists('w', $options)) {
+            $optionsParsed['webhook'] = $options['w'];
+        }
+        if (array_key_exists('webhook', $options)) {
+            $optionsParsed['webhook'] = $options['webhook'];
+        }
+
         if (array_key_exists('f', $options)) {
             $optionsParsed['config'] = $options['f'] ? $options['f'] : '/etc/abraflexi/client.json';
         }
@@ -88,8 +120,8 @@ class Connector extends \AbraFlexi\RW {
             $optionsParsed['debug'] = true;
         }
 
-        if (array_key_exists('help', $options) || array_key_exists('h', $options) ) {
-            echo("Usage: " . basename($_SERVER['SCRIPT_NAME']) . " -s  https://SERVER[:PORT] -u USERNAME -p PASSWORD -c COMPANY [-d debug]\n");
+        if (array_key_exists('help', $options) || array_key_exists('h', $options)) {
+            echo("Usage: " . basename($_SERVER['SCRIPT_NAME']) . " -s  https://SERVER[:PORT] -u USERNAME -p PASSWORD -c COMPANY [-w WebHookURL] [-d debug]\n");
             exit;
         }
 

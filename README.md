@@ -44,7 +44,9 @@ Example of [/etc/nagions/nrpe.d/abraflexi.cfg](debian/conf/abraflexi.cfg) :
 
 ```
     command[check_flexibe]=/usr/lib/nagios/plugins/check_abraflexi -f
-    command[check_abraflexi_webhooks]=/usr/lib/nagios/plugins/check_abraflexi_webhooks -f
+    command[check_abraflexi_webhooks]=/usr/lib/nagios/plugins/check_abraflexi_webhooks
+    command[check_abraflexi_webhook1]=/usr/lib/nagios/plugins/check_abraflexi_webhooks -w https://site.tld/webhook.php
+    command[check_abraflexi_webhook2]=/usr/lib/nagios/plugins/check_abraflexi_webhooks -w https://hook.integromat.com/xxxxxxxx
 ```
 
 Without -f swith the undergoing library php-abraflexi try to use Environment variables: 
