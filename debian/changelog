@@ -1,8 +1,9 @@
-monitoring-plugins-abraflexi (0.6.4) UNRELEASED; urgency=medium
+monitoring-plugins-abraflexi (0.6.5) UNRELEASED; urgency=medium
 
   * Images update
+  * Added support for only sepecified webhooks
 
- -- CyberVitexus <vitex@exiv.jinonice.czf>  Sun, 07 Mar 2021 19:14:45 +0100
+ -- CyberVitexus <vitex@exiv.jinonice.czf>  Tue, 13 Apr 2021 20:11:00 +0200
 
 monitoring-plugins-abraflexi (0.6.3) experimental; urgency=medium
 
