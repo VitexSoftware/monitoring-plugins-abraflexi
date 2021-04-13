@@ -69,6 +69,12 @@ sudo apt update
 sudo apt install monitoring-plugins-abraflexi
 ```
 
+
+Takto vypadá instalace balíčku pomocí gdebi:
+
+[Debian Install](debian-install.png)
+
+
 Dependencies
 ------------
 
