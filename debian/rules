@@ -5,4 +5,4 @@
 
 override_dh_install:
 	dh_install
-	sed -i -e 's/..\/vendor/\/var\/lib\/monitoring-plugins-abraflexi/g' debian/monitoring-plugins-abraflexi/usr/share/monitoring-plugins-abraflexi/*.php
+	sed -i -e 's/..\/vendor/\/var\/lib\/composer\/monitoring-plugins-abraflexi/g' debian/monitoring-plugins-abraflexi/usr/lib/monitoring-plugins-abraflexi/*.php

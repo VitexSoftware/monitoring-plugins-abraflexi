@@ -23,7 +23,7 @@ if (is_null($infodata)) {
 } else {
     $licensedataRaw = $checker->getFlexiData('/default-license');
     $licensedata = $licensedataRaw['license'];
-    $licenseExpire = new DateTime($licensedata['validTo']);
+    $licenseExpire = new DateTime(array_key_exists('validTo',$licensedata) ? $licensedata['validTo'] : 'next year');
     $diff = intval($licenseExpire->diff(new DateTime())->format("%a"));
     if ($diff < 7) {
         if ($diff < 0) {

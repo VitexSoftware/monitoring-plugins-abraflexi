@@ -1,5 +1,5 @@
-debian/conf/composer.json       usr/share/monitoring-plugins-abraflexi/
+debian/conf/composer.json       usr/lib/monitoring-plugins-abraflexi/
 debian/conf/abraflexi.cfg       etc/nagios/nrpe.d/
 debian/bin/*			usr/lib/nagios/plugins
-src/*.php		        usr/share/monitoring-plugins-abraflexi
-src/MPF/*.php		        usr/share/monitoring-plugins-abraflexi/MPF/
+src/*.php		        usr/lib/monitoring-plugins-abraflexi
+src/MPF/*.php		        usr/lib/monitoring-plugins-abraflexi/MPF/

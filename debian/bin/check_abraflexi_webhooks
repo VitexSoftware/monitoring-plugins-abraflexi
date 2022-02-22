@@ -1,6 +1,6 @@
 #!/usr/bin/env php 
 <?php
-require "/usr/share/monitoring-plugins-abraflexi/check_abraflexi_webhooks.php";
+require "/usr/lib/monitoring-plugins-abraflexi/check_abraflexi_webhooks.php";
 
 
 

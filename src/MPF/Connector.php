@@ -34,7 +34,7 @@ class Connector extends \AbraFlexi\RW {
      *                                        timeout,companyUrl,ver,throwException
      *                                        webhook
      */
-    public function setUp(array $options = []) {
+    public function setUp(/*array*/ $options = []) {
         parent::setUp($options);
         $this->setupProperty($options, 'webhook', 'ABRAFLEXI_WEBHOOK');
     }

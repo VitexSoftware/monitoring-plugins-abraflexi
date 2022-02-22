@@ -1,9 +1,13 @@
-monitoring-plugins-abraflexi (0.6.5) UNRELEASED; urgency=medium
+monitoring-plugins-abraflexi (0.6.6) UNRELEASED; urgency=medium
 
+  [ CyberVitexus ]
   * Images update
   * Added support for only sepecified webhooks
 
- -- CyberVitexus <vitex@exiv.jinonice.czf>  Tue, 13 Apr 2021 20:11:00 +0200
+  [ vitex ]
+  * do not use privileged composer
+
+ -- vitex <vitex@vyvojar.spojenet.cz>  Tue, 22 Feb 2022 17:24:03 +0100
 
 monitoring-plugins-abraflexi (0.6.3) experimental; urgency=medium
 

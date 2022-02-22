@@ -9,12 +9,7 @@ set -e
 
     fi
 
-
-cd /usr/share/monitoring-plugins-abraflexi
-if [ -f composer.lock ] ; then
-    rm -f composer.lock
-fi
-composer --no-plugins --no-scripts --no-dev -o install
+    composer-debian monitoring-plugins-abraflexi
 
 #DEBHELPER#
 
